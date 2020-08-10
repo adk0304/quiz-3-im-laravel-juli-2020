@@ -25,7 +25,9 @@ class ProyekController extends Controller
     public function dataproyek()
     {
         //
-        return view('layouts.dataproyek');
+        $proyek = DB::table('proyek')->get();
+        //dd($proyek);
+        return view('layouts.dataproyek', compact('proyek'));
     }
 
     public function create()
