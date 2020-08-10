@@ -19,7 +19,7 @@ class CreateProyekTable extends Migration
             $table->string('deskripsi');
             $table->date('tgl_mulai');
             $table->date('tgl_deadline');
-            $table->boolean('status')->default(0)->change();
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
