@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts/master')
 @section('content')
 <form action="/pertanyaan/create" method="POST">
 			<div class="card-body">

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('master');
+    return view('layouts/master');
 });
 Route::get('/a', function () {
     return view('layouts/konten');
