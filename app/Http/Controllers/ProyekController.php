@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class ItemController extends Controller
+use DB;
+class ProyekController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +14,7 @@ class ItemController extends Controller
     public function index()
     {
         //
+        return view('layouts.erd');
     }
 
     /**
@@ -21,9 +22,18 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function dataproyek()
+    {
+        //
+        return view('layouts.dataproyek');
+    }
+
     public function create()
     {
         //
+
+        return view('layouts.tambahproyek');
+
     }
 
     /**
@@ -34,7 +44,16 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $query = DB::table('proyek')->insert([
+            "nama_proyek"=>$request["nama_proyek"],
+            "deskripsi"=>$request["deskripsi"],
+            "tgl_mulai"=>$request["tgl_mulai"],
+            "tgl_deadline"=>$request["tgl_deadline"],
+            "status"=>$request["status"]
+
+        ]);
+        return redirect('/proyek');
     }
 
     /**

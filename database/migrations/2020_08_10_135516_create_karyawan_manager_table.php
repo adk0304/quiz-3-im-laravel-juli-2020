@@ -17,7 +17,7 @@ class CreateKaryawanManagerTable extends Migration
             $table->bigIncrements('id');
             $table->string('jabatan');
 
-            $table->unsignedBigInteger('proyek_id');
+            $table->unsignedBigInteger('proyek_id')->nullable();
             $table->foreign('proyek_id')->references('id')->on('proyek');
             $table->timestamps();
         });

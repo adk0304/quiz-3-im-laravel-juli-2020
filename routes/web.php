@@ -11,19 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts/erd');
+// Route::get('/', function () {
+//     return view('layouts/erd');
 
-    
-});
-Route::get('/a', function () {
-    return view('layouts/konten');
-});
 
-Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
-Route::post('/items', 'ItemController@store'); // menyimpan data
-Route::get('/items', 'ItemController@index'); // menampilkan semua
-Route::get('/items/{id}', 'ItemController@show'); // menampilkan detail item dengan id 
-Route::get('/items/{id}/edit', 'ItemController@edit'); // menampilkan form untuk edit item
-Route::put('/items/{id}', 'ItemController@update'); // menyimpan perubahan dari form edit
-Route::delete('/items/{id}', 'ItemController@destroy'); // menghapus data dengan id
+// });
+// Route::get('/a', function () {
+//     return view('layouts/konten');
+// });
+
+
+Route::get('/', 'ProyekController@index'); // menampilkan halaman ERD
+Route::get('/proyek', 'ProyekController@dataproyek'); // menampilkan data proyek
+Route::get('/proyek/create', 'ProyekController@create'); // tambah proyek
+Route::post('/proyek/store', 'ProyekController@store'); // tambah proyek
+
+
+
+

@@ -18,9 +18,9 @@ class CreateKaryawanTable extends Migration
             $table->string('nama');
 
 
-            $table->unsignedBigInteger('karyawan_manager_id');
+            $table->unsignedBigInteger('karyawan_manager_id')->nullable();
             $table->foreign('karyawan_manager_id')->references('id')->on('karyawan_manager');
-            $table->unsignedBigInteger('karyawan_staff_id');
+            $table->unsignedBigInteger('karyawan_staff_id')->nullable();
             $table->foreign('karyawan_staff_id')->references('id')->on('karyawan_staff');
             $table->timestamps();
         });

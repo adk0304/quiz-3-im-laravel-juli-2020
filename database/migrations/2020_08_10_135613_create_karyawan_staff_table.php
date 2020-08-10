@@ -17,7 +17,7 @@ class CreateKaryawanStaffTable extends Migration
             $table->bigIncrements('id');
             $table->string('jabatan');
 
-            $table->unsignedBigInteger('karyawan_manager_id');
+            $table->unsignedBigInteger('karyawan_manager_id')->nullable();
             $table->foreign('karyawan_manager_id')->references('id')->on('karyawan_manager');
             $table->timestamps();
         });
